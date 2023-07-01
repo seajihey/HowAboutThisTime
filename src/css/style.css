@@ -1,0 +1,33 @@
+@import url(./contain.css);
+@import url(./sidebar.css);
+@import url(./gnb.css);
+
+div{
+    box-sizing: border-box;
+}
+html, body{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+body{
+    background-color: #F6F7F9;
+}
+.unactive{
+    display: none;
+}
+
+.main{
+    position: absolute;
+    top: 7rem;
+
+    display: flex;
+
+    width: 100vw;
+    min-height: 10rem;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
