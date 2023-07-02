@@ -7,7 +7,7 @@ def getUnavailableDatetime(file_path):
     
     
     # 상수 딕셔너리
-    MODES = {17: "DARK", 255: "LIGHT"}
+    ANDROID_MODES = {17: "DARK", 255: "LIGHT"}
     DATE = {0: "mon", 1: "tue", 2: "wed", 3: "thu", 4: "fri", 5: "sat", 6: "sun"}
     
     # 선분 교차 좌표
@@ -20,7 +20,7 @@ def getUnavailableDatetime(file_path):
     
     # 이미지 읽기, 모드 검출
     img = cv2.imread(file_path)
-    mode = MODES[img[0][0][0]]
+    mode = ANDROID_MODES[img[0][0][0]]
     
     
     # 모드별 감지 색상 지정
@@ -44,23 +44,29 @@ def getUnavailableDatetime(file_path):
     
     
     # 고정점으로부터 추정점까지의 변위(x: 거의 아랫쪽(95%), y: 중간(50%))
-    x_gap_95 = int((Xs[1] - Xs[0]) * 0.95)
-    y_gap_50 = int((Ys[1] - Ys[0]) * 0.5)
+    x_gap_5 = int((Xs[1] - Xs[0]) * 0.05)
+    y_gap_95 = int((Ys[1] - Ys[0]) * 0.95)
     
     
     # 추정점 셀 컬러 확인
     for j, y in enumerate(Ys):
         for i, x in enumerate(Xs):
-            search_x, search_y = x+x_gap_95, y+y_gap_50
+            search_x, search_y = x+x_gap_5, y+y_gap_95
             
             # 범위 내
             if not (0 <= search_x <= img.shape[0] and 0 <= search_y <= img.shape[1]):
                 continue
+            
+            cv2.circle(img, (search_y, search_x), 5, (255, 0, 0), 3)
                     
             # 공강 상태가 아니라면
             if img[search_x][search_y][0] != BACKGROUND_COLOR:
                 unavailable_datetimes[DATE[j]].append(i+1)
+                
 
+    cv2.imshow("img", img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
     
     """
     JSON return
@@ -83,5 +89,8 @@ def getUnavailableDatetime(file_path):
 
 
 # 테스트 코드(검토 후 삭제 가능)
-for file_name in ['d1', 'd2', 'd3', 'd4', 'l1', 'l2', 'l3', 'l4', 'omg']:
+while True:
+    file_name = input("파일명(확장자 생략하여 입력) > ")
+    if file_name == "exit":
+        break
     print(getUnavailableDatetime("src/img/detection_images/" + file_name + ".jpg"))
