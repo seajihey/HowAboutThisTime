@@ -6,6 +6,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="./src/css/mypage/style.css">
+    <script src="./src/js/mypage.js" defer></script>
 </head>
 <body>
     <div class="gnb">
@@ -30,15 +31,76 @@
             <div class="title">프로필</div>
 
             <div class="side_items">
-                <div class="item">그룹 목록</div>
-                <div class="item">알람</div>
-                <div class="item item_active">내 시간표</div>
-                <div class="item">정보 수정</div>
+                <div class="item side_item_active" data-content="group_list">그룹 목록</div>
+                <div class="item" data-content="alam_content">알람</div>
+                <div class="item" data-content="mytable_content">내 시간표</div>
+                <div class="item" data-content="info_content">정보 수정</div>
             </div>
 
         </div>
 
         <div class="contain">
+            <div class="content group_list">
+                <div class="filters">
+                    <div class="filter_item">정렬 날짜</div>
+                    <div class="filter_item">정렬 모양</div>
+                    <div class="filter_item group_search">그룹검색</div>
+                </div>
+
+                <div class="groups">
+                    <div class="group_item">
+                        <div class="group_content">
+                            <div class="group_icon">
+                                <img src="./src/img/Group_icon_blue.png">
+                            </div>
+                            <div class="group_text">
+                                <div class="group_title">기초설계 프로젝트 회의</div>
+                                <div class="group_app">김멋사, 김멋사, 홍길동, 김영희, 박사자</div>
+                            </div>
+                        </div>
+
+                        <div class="icons">
+                            <div class="star_icon"><img src="./src/img/star_icon.png"></div>
+                            <div class="more_icon"><img src="./src/img/more_icon.png"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="group_item">
+                        <div class="group_content">
+                            <div class="group_icon">
+                                <img src="./src/img/Group_icon_red.png">
+                            </div>
+                            <div class="group_text">
+                                <div class="group_title">기초설계 프로젝트 회의</div>
+                                <div class="group_app">김멋사, 홍길동, 김영희, 박사자</div>
+                            </div>
+                        </div>
+
+                        <div class="icons">
+                            <div class="star_icon"><img src="./src/img/star_icon.png"></div>
+                            <div class="more_icon"><img src="./src/img/more_icon.png"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="group_item">
+                        <div class="group_content">
+                            <div class="group_icon">
+                                <img src="./src/img/Group_icon_yellow.png" >
+                            </div>
+                            <div class="group_text">
+                                <div class="group_title">기초설계 프로젝트 회의</div>
+                                <div class="group_app">김멋사, 김멋사, 홍길동, 김영희, 박사자</div>
+                            </div>
+                        </div>
+
+                        <div class="icons">
+                            <div class="star_icon"><img src="./src/img/star_icon.png"></div>
+                            <div class="more_icon"><img src="./src/img/more_icon.png"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="content mytable_content unactive">
 
                 <div class="mytable_title">나의 시간표</div>
@@ -52,26 +114,7 @@
                     </div> 
                 </div>
             </div>
-            <div class="content group_list ">
-                <div class="filters">
-                    <div class="group_search">그룹검색</div>
-                </div>
-                <div class="groups">
-                    <div class="group_item">
-                        <div class="group_icon">
-                        
-                        </div>
-                        <div class="group_content">
-                            <div class="group_title">기초설계 프로젝트 회의</div>
-                            <div class="group_app">김멋사,</div>
-                        </div>
-                        <div class="icons">
-                            <div class="star_icon"></div>
-                            <div class="plus_icon"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </body>

@@ -10,7 +10,7 @@
 
     background-color: white;
     width: 100%;
-    
+    height: calc(100vh - 7rem);
 
     border-radius: 4rem 0 0 ;
 }

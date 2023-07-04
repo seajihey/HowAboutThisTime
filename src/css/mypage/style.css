@@ -1,6 +1,7 @@
 @import url(./contain.css);
 @import url(./sidebar.css);
 @import url(./gnb.css);
+@import url(./group_list.css);
 
 div{
     box-sizing: border-box;
