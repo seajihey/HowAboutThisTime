@@ -1,0 +1,119 @@
+@import url(./gnb.css);
+
+div {
+    box-sizing: border-box;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #F6F7F9;
+}
+
+.mainSignup > div {
+    /* display: flex;
+  align-items: center; */
+  margin-bottom: 10px;
+}
+
+.mainSignup input{
+    border-radius: 15px;
+    height: 68px;
+    margin-left: 20px;
+    display: flex;
+}
+
+/* .scheduleBox{
+    border-radius: 15px;
+    width: 630px;
+    height: 70px;
+    margin-left: 20px;
+    background-color: white;
+    border: 1.78px solid ;
+} */
+
+.scheduleBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+    width: 630px;
+    height: 70px;
+    margin-left: 20px;
+    background-color: white;
+}
+
+.mainSignup > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 47px;
+}
+
+.mainSignup label {
+    width: 150px;
+    margin-right: 20px;
+} 
+
+.mainSignup input {
+    border-radius: 15px;
+    flex: 1;
+    height: 68px;
+    width: 560px;
+    padding-left: 38px;
+}
+
+.mainSignup label.star::after {
+    content: "*";
+    color: blue;
+    margin-left: 5px;
+}
+
+.required::before {
+    content: "*";
+    color: blue;
+    margin-right: 5px;
+}
+
+
+.inputWrapper {
+    flex: 1;
+    padding-right: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.inputWrapper #scheduleFile {
+    width: 100%;
+    margin-left:140px;
+    margin-top: 40px;;
+}
+
+input[type="file"] {
+    background-color: red; /* 원하는 색상으로 변경 */
+    border-radius: 50%; /* 버튼을 원형으로 변경 */
+    /* 추가적인 스타일 및 레이아웃 속성을 적용할 수 있습니다 */
+  }
+
+  .custom-button {
+    background-color: #164DCA; /* 원하는 색상으로 변경 */
+    color: white; /* 버튼 텍스트 색상 설정 */
+    padding: 10px 20px;
+    border-radius: 75px;
+    cursor: pointer;
+  }
+  /* 파일 선택 버튼 숨기기 */
+  input[type="file"] {
+    display: none;
+  }
+
+  input{
+    border:none;
+  }
