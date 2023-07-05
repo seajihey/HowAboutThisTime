@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import JsonResponse
 
 from rest_framework.generics import *
+from rest_framework.response import Response
+from rest_framework import status
 
 from .models import User, Group
 from .serializers import UserSerializer, GroupSerializer
@@ -31,6 +33,18 @@ class UserDetail(RetrieveAPIView):
 
 
 class GroupList(ListCreateAPIView):
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        headers = self.get_success_headers(serializer.data)
+        instance = User.objects.get(id=request.data["group_users"])
+        instance.belonging_groups.add(serializer.data["group_code"])
+        instance.save()
+        return Response(
+            serializer.data, status=status.HTTP_201_CREATED, headers=headers
+        )
+
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
 
@@ -44,8 +58,12 @@ class GroupUpdate(UpdateAPIView):
     def patch(self, request, *args, **kwargs):
         kwargs["partial"] = True
         instance = self.get_object()
-        instance.group_users.add(User.objects.get(id=request.data["group_users"]))
+        user_instance = User.objects.get(id=request.data["group_users"])
+        instance.group_users.add(user_instance)
         instance.save()
+
+        user_instance.belonging_groups.add(instance.group_code)
+        user_instance.save()
 
         return JsonResponse(
             {
