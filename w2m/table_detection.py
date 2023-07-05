@@ -1,9 +1,13 @@
 class TableDetector:
+    import os
+
     ANDROID_MODES_BY_RED = {17: "DARK", 255: "LIGHT"}
     ANDROID_LINE_COLOR = {"DARK": 49, "LIGHT": 237}
     ANDROID_BACKGROUND_COLOR = {"DARK": 17, "LIGHT": 255}
     ANDROID_PIXEL_ERROR_TOLERANCE = 5
     DATE = {0: "mon", 1: "tue", 2: "wed", 3: "thu", 4: "fri", 5: "sat", 6: "sun"}
+    BASE_PATH = os.path.dirname(os.path.abspath(__file__))
+    BASE_PATH = BASE_PATH[: BASE_PATH.find("w2m") - 1]
 
     @staticmethod
     def getUnavailableDatetime(file_path_list):
@@ -42,7 +46,7 @@ class TableDetector:
             # 선분 교차 좌표
             Xs, Ys = [], []
 
-            img = cv2.imread(file_path)
+            img = cv2.imread(TableDetector.BASE_PATH + file_path)
             mode = TableDetector.ANDROID_MODES_BY_RED[img[0][0][0]]
 
             # 모드별 감지 색상 지정
@@ -90,28 +94,28 @@ class TableDetector:
         for key in unavailable_datetimes.keys():
             unavailable_datetimes[key] = [*sorted(unavailable_datetimes[key])]
 
-        return json.dumps(unavailable_datetimes)
+        return unavailable_datetimes
 
 
-# 테스트 코드(검토 후 삭제 가능)
-while True:
-    print(
-        """
-        
-        사용 방법 : 시간표 파일 이름들을 공백으로 쭉 적어줍니다.
-        한 명이면 하나만 적어도 됩니다.
+# # 테스트 코드(검토 후 삭제 가능)
+# while True:
+#     print(
+#         """
 
-        ex) 한 명   >> d1
-        ex) 여러명  >> d1 l3 l4 d2
+#         사용 방법 : 시간표 파일 이름들을 공백으로 쭉 적어줍니다.
+#         한 명이면 하나만 적어도 됩니다.
 
-        작성 후 엔터를 입력하면 모든 사람들의 경우를 고려한 불가능한 시간대를 생성해줍니다.
-        
-        """
-    )
+#         ex) 한 명   >> d1
+#         ex) 여러명  >> d1 l3 l4 d2
 
-    file_names = input("파일명만 여러 개 공백으로 구분하여 입력 >> ")
-    if file_names == "exit":
-        break
+#         작성 후 엔터를 입력하면 모든 사람들의 경우를 고려한 불가능한 시간대를 생성해줍니다.
 
-    generatePath = lambda file_name: "../src/img/detection_images/" + file_name + ".jpg"
-    print(TableDetector.getUnavailableDatetime(map(generatePath, file_names.split())))
+#         """
+#     )
+
+#     file_names = input("파일명만 여러 개 공백으로 구분하여 입력 >> ")
+#     if file_names == "exit":
+#         break
+
+#     generatePath = lambda file_name: "../src/img/detection_images/" + file_name + ".jpg"
+#     print(TableDetector.getUnavailableDatetime(map(generatePath, file_names.split())))

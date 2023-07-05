@@ -8,6 +8,8 @@ from rest_framework import status
 from .models import User, Group
 from .serializers import UserSerializer, GroupSerializer
 
+from .table_detection import TableDetector
+
 
 ##페이지##
 def main(request):
@@ -40,6 +42,13 @@ class GroupList(ListCreateAPIView):
         headers = self.get_success_headers(serializer.data)
         instance = User.objects.get(id=request.data["group_users"])
         instance.belonging_groups.add(serializer.data["group_code"])
+        if instance.img_path is not None:
+            unavailable_datetimes = TableDetector.getUnavailableDatetime(
+                [instance.img_path]
+            )
+            group_instance = Group.objects.get(group_code=serializer.data["group_code"])
+            group_instance.group_unavailable_datetimes = unavailable_datetimes
+            group_instance.save()
         instance.save()
         return Response(
             serializer.data, status=status.HTTP_201_CREATED, headers=headers
@@ -60,10 +69,27 @@ class GroupUpdate(UpdateAPIView):
         instance = self.get_object()
         user_instance = User.objects.get(id=request.data["group_users"])
         instance.group_users.add(user_instance)
-        instance.save()
 
         user_instance.belonging_groups.add(instance.group_code)
         user_instance.save()
+
+        if user_instance.img_path is not None:
+            unavailable_datetimes = TableDetector.getUnavailableDatetime(
+                [user_instance.img_path]
+            )
+
+            # 덮어쓰기 아니고 리스트 append해야함 #
+            instance.group_unavailable_datetimes = unavailable_datetimes
+
+        instance.save()
+
+        # if instance.img_path is not None:
+        #     unavailable_datetimes = TableDetector.getUnavailableDatetime(
+        #         [instance.img_path]
+        #     )
+        #     group_instance = Group.objects.get(group_code=serializer.data["group_code"])
+        #     group_instance.group_unavailable_datetimes = unavailable_datetimes
+        #     group_instance.save()
 
         return JsonResponse(
             {

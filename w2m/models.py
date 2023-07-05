@@ -12,7 +12,7 @@ class User(models.Model):
     pw = models.CharField(max_length=255)
     name = models.CharField(max_length=20)
     email = models.CharField(max_length=255, null=True, blank=True)
-    img = models.ImageField(upload_to="user_images/", blank=True, null=True)
+    img = models.ImageField(upload_to="", blank=True, null=True)
     img_path = models.CharField(max_length=255, blank=True, null=True)
     belonging_groups = models.ManyToManyField(to="Group", blank=True)
 
@@ -26,3 +26,4 @@ class Group(models.Model):
     group_name = models.CharField(max_length=50, default="New Group")
     group_code = models.CharField(max_length=8, primary_key=True, default=random_code)
     group_users = models.ManyToManyField(User)
+    group_unavailable_datetimes = models.JSONField(blank=True, default=dict)
