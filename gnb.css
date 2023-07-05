@@ -1,0 +1,55 @@
+.logo {
+    position: absolute;
+    margin: 0 auto;
+    padding: 0.2rem 2rem;
+    width: 177px;
+    height: 177px;
+    left: 42%;
+    top: 15px;
+    z-index: 2;
+    
+    
+}
+.circle {
+    position: absolute;
+    width: 235px;
+    height: 116px;
+    left: 40%;
+    top: 0;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow : 0 5px 0 0 ;
+    box-shadow: 0 0.5px 12px 8px rgba(150, 150, 150, 0.3);
+    z-index: 1;
+    
+    
+  }
+
+.gnb{
+    position: absolute;
+    top: 0;
+    
+    height: 3rem;
+    width: 100vw;
+    box-sizing: border-box;
+
+    background-color: white;
+
+    box-shadow: 0 0.5px 12px 8px rgba(150, 150, 150, 0.3);
+}
+.logout {
+    position:absolute;
+    top:12px;
+    right: 70px;
+    z-index: 3;
+    font-weight: bold;
+    
+}
+.button_image {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 2px;
+    right: -25px;
+
+}
