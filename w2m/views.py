@@ -1,11 +1,10 @@
 from django.shortcuts import render
-from rest_framework import generics
+from django.http import JsonResponse
+
+from rest_framework.generics import *
+
 from .models import User, Group
 from .serializers import UserSerializer, GroupSerializer
-from rest_framework.response import Response
-from rest_framework.authentication import TokenAuthentication
-from rest_framework.permissions import IsAuthenticated
-from django.http import JsonResponse
 
 
 ##페이지##
@@ -14,29 +13,34 @@ def main(request):
 
 
 #### restapi ####
-class UserList(generics.ListCreateAPIView):
+class UserList(ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
 
-class UserDetail(generics.RetrieveAPIView):
+class UserDelete(DestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+class UserDetail(RetrieveAPIView):
     # authentication_classes = (TokenAuthentication,)
     # permission_classes = (IsAuthenticated,) # 토큰인증은 ... 넣/말 고민중
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
 
-class GroupList(generics.ListCreateAPIView):
+class GroupList(ListCreateAPIView):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
 
 
-class GroupDetail(generics.RetrieveAPIView):
+class GroupDetail(RetrieveAPIView):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
 
 
-class GroupUpdate(generics.UpdateAPIView):
+class GroupUpdate(UpdateAPIView):
     def patch(self, request, *args, **kwargs):
         kwargs["partial"] = True
         instance = self.get_object()
@@ -51,5 +55,10 @@ class GroupUpdate(generics.UpdateAPIView):
             }
         )
 
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer
+
+
+class GroupDelete(DestroyAPIView):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
