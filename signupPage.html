@@ -49,23 +49,20 @@
             <div class="scheduleBox">
                 에브리타임 시간표 이미지를 업로드해주세요
                 <div class="inputWrapper">
-                    <input id="scheduleFile" type="file" accept=".jpg, .png">
+                    <div class="file-upload">
+                        <label for="file-input" class="custom-button">업로드</label>
+                        <input id="file-input" type="file">
+                      </div>
                 </div>
             </div>
         </div>
         <div class="uploadNotice">추후에 마이페이지에서 시간표를 업로드할 수 있습니다.</div>
         <div class="personalInfo">
-            <input type="checkbox" name="personalInfoCheck" value="personalInfoCheck"> 
-            <span>개인정보 수집 및 이용 동의</span>
-            <span> 보기</span>
+            <input type="checkbox" name="personalInfoCheck" value="personalInfoCheck" id="personalInfoCheck">
+            개인정보 수집 및 이용 동의
+            <span>보기</span>
         </div>
         <div>가입</div>
     </div>
-
-
-    <div class="file-upload">
-        <label for="file-input" class="custom-button">업로드</label>
-        <input id="file-input" type="file">
-      </div>
 </body>
 </html>

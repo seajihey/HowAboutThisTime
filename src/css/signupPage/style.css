@@ -21,7 +21,7 @@ body {
 .mainSignup > div {
     /* display: flex;
   align-items: center; */
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .mainSignup input{
@@ -44,11 +44,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 15px;
-    width: 630px;
-    height: 70px;
+    /* border-radius: 15px; */
+    width: 1000px;
+    height: 80px;
     margin-left: 20px;
     background-color: white;
+    font-size: 18px;
+    padding-left: 40px;
+    color: #888888;
 }
 
 .mainSignup > div {
@@ -57,57 +60,59 @@ body {
     margin-bottom: 47px;
 }
 
-.mainSignup label {
-    width: 150px;
+.mainSignup label:not(.custom-button) {
+    width: 160px;
     margin-right: 20px;
+    font-weight: bold;
+    font-size:18px
 } 
 
 .mainSignup input {
     border-radius: 15px;
     flex: 1;
-    height: 68px;
+    height: 80px;
     width: 560px;
     padding-left: 38px;
 }
 
 .mainSignup label.star::after {
     content: "*";
-    color: blue;
-    margin-left: 5px;
+    color: #92A8FE;
+    margin-left: 1px;
+    position: relative;
+    top: -10px;
 }
 
 .required::before {
     content: "*";
-    color: blue;
+    color: #92A8FE;
     margin-right: 5px;
+    position: relative;
+    top: -0.5px;
 }
 
 
-.inputWrapper {
-    flex: 1;
-    padding-right: 30px;
-    display: flex;
-    align-items: center;
-}
 
-.inputWrapper #scheduleFile {
+/* .inputWrapper #scheduleFile {
     width: 100%;
     margin-left:140px;
     margin-top: 40px;;
-}
+} */
 
 input[type="file"] {
-    background-color: red; /* 원하는 색상으로 변경 */
-    border-radius: 50%; /* 버튼을 원형으로 변경 */
+    border-radius: 50%; 
     /* 추가적인 스타일 및 레이아웃 속성을 적용할 수 있습니다 */
   }
 
   .custom-button {
     background-color: #164DCA; /* 원하는 색상으로 변경 */
     color: white; /* 버튼 텍스트 색상 설정 */
-    padding: 10px 20px;
+    padding: 7px 20px ;
     border-radius: 75px;
     cursor: pointer;
+    margin-right: 40px;
+    text-align: center;
+    width: auto;
   }
   /* 파일 선택 버튼 숨기기 */
   input[type="file"] {
@@ -117,3 +122,47 @@ input[type="file"] {
   input{
     border:none;
   }
+
+::placeholder {
+    font-size: 18px; /* 원하는 크기로 조정합니다 */
+  }
+
+  .file-upload {
+    display: flex;
+    align-items: center;
+  }
+
+  .required{
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 1100px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: 30px;
+  }
+
+    .uploadNotice{
+        margin-left: 798px;
+        top:-30px;
+        position: relative;
+        font-weight: bold;
+    }
+
+    .personalInfo {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* 개인정보 수집 및 이용 동의를 페이지 가운데로 정렬 */
+        margin-bottom: 1px; /* 체크박스와 다음 요소 사이의 간격 조정 */
+    }
+    
+    .personalInfo input[type="checkbox"] {
+        margin-right: 5px; /* 체크박스 오른쪽 여백 조정 */
+        width: 17px; /* 체크박스 너비 조정 */
+        height: 17px; /* 체크박스 높이 조정 */
+        border-radius: 100px;
+    }
+    
+    .personalInfo span {
+        margin-right: 300px; /* '보기' 텍스트 오른쪽 여백 조정 */
+    }
