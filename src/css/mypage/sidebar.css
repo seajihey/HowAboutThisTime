@@ -15,11 +15,13 @@
 .side_items{
     font-size: 1rem;
     font-weight: 500;
+
+    cursor: pointer;
 }
 .item{
     padding: 0.5rem;
 }
-.item_active{
+.side_item_active{
     color: #164DCA;
     font-weight: 900;
     font-size: 1.2rem;
