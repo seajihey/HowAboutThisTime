@@ -108,3 +108,5 @@ class GroupUpdate(UpdateAPIView):
 class GroupDelete(DestroyAPIView):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+
