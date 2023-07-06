@@ -1,7 +1,7 @@
 const openButton = document.getElementById("open");
 const modal = document.querySelector(".modal");
 const overlay = modal.querySelector(".modalOverlay");
-const closeBtn = modal.querySelector("button");
+const closeBtn = modal.querySelector(".closeBtn");
 const openModal = () => {
     modal.classList.remove("hidden");
 }
