@@ -74,22 +74,24 @@ class GroupUpdate(UpdateAPIView):
         user_instance.save()
 
         if user_instance.img_path is not None:
-            unavailable_datetimes = TableDetector.getUnavailableDatetime(
+            user_unavailable_datetimes = TableDetector.getUnavailableDatetime(
                 [user_instance.img_path]
             )
 
-            # 덮어쓰기 아니고 리스트 append해야함 #
-            instance.group_unavailable_datetimes = unavailable_datetimes
+            all_unavailable_datetimes = instance.group_unavailable_datetimes
+
+            for key in user_unavailable_datetimes.keys():
+                user_temp = set(user_unavailable_datetimes[key])
+                all_temp = set(all_unavailable_datetimes[key])
+                all_unavailable_datetimes[key] = [*sorted(user_temp | all_temp)]
+
+            """""" """""" """""" """""" """""" """""" """""" ""
+            """ 덮어쓰기 아니고 리스트 append해야함  """
+            """""" """""" """""" """""" """""" """""" """""" ""
+
+            instance.group_unavailable_datetimes = all_unavailable_datetimes
 
         instance.save()
-
-        # if instance.img_path is not None:
-        #     unavailable_datetimes = TableDetector.getUnavailableDatetime(
-        #         [instance.img_path]
-        #     )
-        #     group_instance = Group.objects.get(group_code=serializer.data["group_code"])
-        #     group_instance.group_unavailable_datetimes = unavailable_datetimes
-        #     group_instance.save()
 
         return JsonResponse(
             {
