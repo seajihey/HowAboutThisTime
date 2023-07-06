@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mainpage</title>
     <link rel="stylesheet" href="./src/css/mainpage/style.css">
+    <script src="./src/js/loginModal.js" defer></script>
 </head>
 <body class="mainpage">
     <div class="gnb">
@@ -18,11 +19,23 @@
 
         <div class="nav">
             <span class="navitem login">
+                <button id="open">
                 로그인
+                </button>
             </span>
+            
             <span class="navitem signUp">
                 회원가입
             </span>
+        </div>
+
+        
+        <div class="modal hidden" >
+            <div class="modalOverlay"></div><!-- 모달창의 배경색 -->
+            <div class="modalContent">
+                <h1>I'm a modal</h1>
+                <button>X</button>
+            </div>
         </div>
 
         <div class="top">
