@@ -1,14 +1,17 @@
 from django.shortcuts import render
-from django.http import JsonResponse
-
+from django.http import JsonResponse, FileResponse
 from rest_framework.generics import *
-from rest_framework.response import Response
-from rest_framework import status
 
 from .models import User, Group
 from .serializers import UserSerializer, GroupSerializer
-
 from .table_detection import TableDetector
+from .opencv_draw_picture import Drawer
+
+
+import os, cv2
+
+BASE_PATH = os.path.dirname(os.path.abspath(__file__))
+BASE_PATH = BASE_PATH[: BASE_PATH.find("w2m") - 1]
 
 
 ##페이지##
@@ -39,19 +42,39 @@ class GroupList(ListCreateAPIView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        headers = self.get_success_headers(serializer.data)
-        instance = User.objects.get(id=request.data["group_users"])
-        instance.belonging_groups.add(serializer.data["group_code"])
-        if instance.img_path is not None:
+
+        user_instance = User.objects.get(id=request.data["group_users"])
+        group_instance = Group.objects.get(group_code=serializer.data["group_code"])
+
+        user_instance.belonging_groups.add(serializer.data["group_code"])
+        group_instance.group_users.add(user_instance.id)
+
+        user_instance.save("create_group")
+        unavailable_datetimes = {
+            "mon": dict(),
+            "tue": dict(),
+            "wed": dict(),
+            "thu": dict(),
+            "fri": dict(),
+            "sat": dict(),
+            "sun": dict(),
+        }
+
+        if user_instance.img_path:
             unavailable_datetimes = TableDetector.getUnavailableDatetime(
-                [instance.img_path]
+                user_instance.img_path, unavailable_datetimes, user_instance.id
             )
-            group_instance = Group.objects.get(group_code=serializer.data["group_code"])
-            group_instance.group_unavailable_datetimes = unavailable_datetimes
-            group_instance.save()
-        instance.save()
-        return Response(
-            serializer.data, status=status.HTTP_201_CREATED, headers=headers
+
+        group_instance.group_unavailable_datetimes = unavailable_datetimes
+        group_instance.save()
+
+        return JsonResponse(
+            {
+                "group_name": group_instance.group_name,
+                "group_code": group_instance.group_code,
+                "group_users": [user.id for user in group_instance.group_users.all()],
+                "group_unavailable_datetimes": group_instance.group_unavailable_datetimes,
+            }
         )
 
     queryset = Group.objects.all()
@@ -66,38 +89,32 @@ class GroupDetail(RetrieveAPIView):
 class GroupUpdate(UpdateAPIView):
     def patch(self, request, *args, **kwargs):
         kwargs["partial"] = True
-        instance = self.get_object()
+
+        group_instance = self.get_object()
         user_instance = User.objects.get(id=request.data["group_users"])
-        instance.group_users.add(user_instance)
 
-        user_instance.belonging_groups.add(instance.group_code)
-        user_instance.save()
+        group_instance.group_users.add(user_instance.id)
+        user_instance.belonging_groups.add(group_instance.group_code)
 
-        if user_instance.img_path is not None:
-            user_unavailable_datetimes = TableDetector.getUnavailableDatetime(
-                [user_instance.img_path]
+        user_instance.save("update_group")
+
+        if user_instance.img_path:
+            group_instance.group_unavailable_datetimes = (
+                TableDetector.getUnavailableDatetime(
+                    user_instance.img_path,
+                    group_instance.group_unavailable_datetimes,
+                    user_instance.id,
+                )
             )
 
-            all_unavailable_datetimes = instance.group_unavailable_datetimes
-
-            for key in user_unavailable_datetimes.keys():
-                user_temp = set(user_unavailable_datetimes[key])
-                all_temp = set(all_unavailable_datetimes[key])
-                all_unavailable_datetimes[key] = [*sorted(user_temp | all_temp)]
-
-            """""" """""" """""" """""" """""" """""" """""" ""
-            """ 덮어쓰기 아니고 리스트 append해야함  """
-            """""" """""" """""" """""" """""" """""" """""" ""
-
-            instance.group_unavailable_datetimes = all_unavailable_datetimes
-
-        instance.save()
+        group_instance.save()
 
         return JsonResponse(
             {
-                "group_code": instance.group_code,
-                "group_name": instance.group_name,
-                "group_users": [user.id for user in instance.group_users.all()],
+                "group_name": group_instance.group_name,
+                "group_code": group_instance.group_code,
+                "group_users": [user.id for user in group_instance.group_users.all()],
+                "group_unavailable_datetimes": group_instance.group_unavailable_datetimes,
             }
         )
 
@@ -110,3 +127,21 @@ class GroupDelete(DestroyAPIView):
     serializer_class = GroupSerializer
 
 
+class GroupImage(RetrieveAPIView):
+    def get(self, request, *args, **kwargs):
+        group_instance = self.get_object()
+
+        time_table_image = Drawer.getImageFromTimeTableDictionary(
+            group_instance.group_unavailable_datetimes, "group"
+        )
+
+        file_path = BASE_PATH + "/group_images/" + group_instance.group_code + ".png"
+        cv2.imwrite(file_path, time_table_image)
+
+        print("Success")
+        return FileResponse(
+            open(file_path, "rb"), content_type="image/png", as_attachment=True
+        )
+
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer

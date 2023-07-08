@@ -1,5 +1,9 @@
 from django.db import models
 from random import randint
+import os
+
+BASE_PATH = os.path.dirname(os.path.abspath(__file__))
+BASE_PATH = BASE_PATH[: BASE_PATH.find("w2m") - 1]
 
 
 def random_code():
@@ -17,9 +21,25 @@ class User(models.Model):
     belonging_groups = models.ManyToManyField(to="Group", blank=True)
 
     def save(self, *args, **kwargs):
-        if self.img:
-            self.img_path = self.img.url
-        super().save(*args, **kwargs)
+        try:
+            """GROUP CREATION FAILED"""
+            mode = args[0]
+            if mode == "create_group":
+                super().save((), **kwargs)
+            elif mode == "update_group":
+                super().save((), **kwargs)
+        except:
+            if self.img:
+                file_type = self.img.url[self.img.url.index(".") + 1 :]
+                new_img_path = "/media/%s.%s" % (self.id, file_type)
+                self.img_path = new_img_path
+                super().save(*args, **kwargs)
+                with open(BASE_PATH + self.img.url, mode="rb") as f:
+                    all_data = f.read()
+                    with open(BASE_PATH + new_img_path, mode="wb") as g:
+                        g.write(all_data)
+            if self.img:
+                os.remove(BASE_PATH + self.img.url)
 
 
 class Group(models.Model):
