@@ -1,5 +1,5 @@
 .side_bar{
-    height: calc(100vh - 8rem);
+    height: 100%;
     
     white-space: nowrap;
     padding: 1rem 3rem;

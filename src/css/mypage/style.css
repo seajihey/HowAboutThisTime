@@ -1,4 +1,4 @@
-@import url(./contain.css);
+@import url(./table.css);
 @import url(./sidebar.css);
 @import url(./gnb.css);
 @import url(./group_list.css);
@@ -25,7 +25,7 @@ body{
     display: flex;
 
     width: 100vw;
-    min-height: 10rem;
+    height:calc(100vh - 7rem);
 
     box-sizing: border-box;
 
