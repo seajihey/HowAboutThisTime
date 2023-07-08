@@ -158,7 +158,6 @@ class GroupImage(RetrieveAPIView):
         file_path = BASE_PATH + "/group_images/" + group_instance.group_code + ".png"
         cv2.imwrite(file_path, time_table_image)
 
-        print("Success")
         return FileResponse(
             open(file_path, "rb"), content_type="image/png", as_attachment=True
         )
