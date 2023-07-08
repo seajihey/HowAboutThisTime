@@ -1,6 +1,7 @@
 /* 월요일 */
 .mon_1 {
     position: absolute;
+    
     top:230px;
     left: 535px;
     width: 82px;
@@ -9,6 +10,7 @@
     border-radius: 15px;
 }
 .mon_2 {
+    position: fixed;
     position: absolute;
     top:294px;
     left: 535px;
