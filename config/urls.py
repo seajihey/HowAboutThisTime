@@ -1,14 +1,13 @@
 from django.contrib import admin
 from django.urls import path, include, re_path  # re_path는 drf-yasg
-from w2m import views
 from django.conf import settings
 from django.conf.urls.static import static
 
-# 아래는 다 drf_yasg
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
 
+from w2m import views
 
 # drf_yasg설정
 schema_url_patterns = [
