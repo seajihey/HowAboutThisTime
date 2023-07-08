@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mainpage</title>
+    <link rel="stylesheet" href="./src/css/mainpage/style.css">
+    <script src="./src/js/loginModal.js" defer></script>
+</head>
+<body class="mainpage">
+    <div class="gnb">
+        <div class="gnb_logo_box">
+            <img src="./src/img/logo.png" style="visibility: hidden;" >
+        </div>
+
+        <div class="logo">
+            <img src="./src/img/logo.png">
+        </div>
+
+        <div class="nav">
+            <span class="navitem login">
+                <button id="open">
+                로그인
+                </button>
+            </span>
+            
+            <span class="navitem signUp">
+                회원가입
+            </span>
+        </div>
+
+        
+        <div class="modal hidden" >
+            <div class="modalOverlay"></div><!-- 모달창의 배경색 -->
+            <div class="modalContent">
+                <h1>로그인</h1>
+                <button class="closeBtn">X</button>
+                <div class="IdPassword">
+                    <input type="text" id="loginId" placeholder="아이디">
+                    <input type="text" id="loginPassword" placeholder="비밀번호">
+                </div>
+                <div class="loginCheck">
+                    <label for="IdSaveCheck">
+                        <input type="checkbox" name="IdSave" id="IdSaveCheck">아이디 저장
+                    </label>
+                    <label for="autoLoginCheck">
+                        <input type="checkbox" name="autoLogin" id="autoLoginCheck">자동 로그인
+                    </label>
+                </div>
+                <button class="loginBtn">로그인</button>
+                <div class="option">
+                    <a href="">아이디 찾기</a> ㅣ <a href="">비밀번호 재설정 </a> ㅣ <a href="signupPage.html">회원가입</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="top">
+            <div class="blueCircle"></div>
+            <div class="explain">
+                <h1>사진 하나로 만드는 우리 모임, </h1>
+                <h1>이때? 어때!</h1>
+                <h3>사진 한 장으로 우리 모임의 일정을 관리하세요.</h3>
+                <div class="underline"></div>
+            </div>
+            <div class="moniter"></div>
+        </div>
+        
+        <div class="bottom">
+            
+          
+        </div>
+        <div class="skyblueCircle"></div>
+        <div class="groupBtn">
+            <div class="createGroup">그룹 생성</div>
+            <div class="joinGroup">그룹 참가</div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
