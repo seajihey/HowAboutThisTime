@@ -11,7 +11,6 @@ class TableDetector:
 
     @staticmethod
     def getUnavailableDatetime(file_path: str, unavailable_datetimes: dict, user_id):
-        """opencv-python 설치 필요 >> pip install opencv-python"""
         import cv2
 
         # 선분 교차 좌표

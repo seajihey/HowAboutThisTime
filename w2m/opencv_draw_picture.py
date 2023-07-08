@@ -71,8 +71,11 @@ class Drawer:
                     color=Drawer.COLOR_BLACK,
                     thickness=3,
                 )
+
                 x += 135
+
             x = 100
+
             cv2.putText(
                 img=img,
                 text=str(start).zfill(2),
@@ -83,6 +86,7 @@ class Drawer:
                 thickness=3,
                 lineType=cv2.LINE_AA,
             )
+
             y += 135
             start += 1
 
@@ -145,47 +149,3 @@ class Drawer:
         img = Drawer.drawRectangles(img, w, h, new_dictionary, mode)
 
         return img
-
-
-# test_dict = {
-#     "mon": {
-#         "6": ["lmj__010129", "dev_ung"],
-#         "7": ["formjonghwa"],
-#         "8": ["dev_ung"],
-#         "9": ["dev_ung", "formjonghwa"],
-#     },
-#     "tue": {
-#         "1": ["lmj__010129", "dev_ung"],
-#         "2": ["jihye", "lmj__010129"],
-#         "6": ["jihye"],
-#         "7": ["formjonghwa"],
-#         "11": ["dev_ung", "formjonghwa", "lmj__010129", "jihye"],
-#         "12": ["formjonghwa"],
-#     },
-#     "wed": {
-#         "1": ["lmj__010129", "formjonghwa", "dev_ung"],
-#         "2": ["jihye", "lmj__010129", "formjonghwa"],
-#         "5": ["jihye"],
-#         "6": ["dev_ung", "formjonghwa", "lmj__010129"],
-#         "7": ["lmj__010129"],
-#     },
-#     "thu": {
-#         "1": ["lmj__010129", "formjonghwa", "jihye", "dev_ung"],
-#         "2": ["jihye", "lmj__010129", "formjonghwa"],
-#         "3": ["jihye"],
-#         "5": [],
-#         "11": ["formjonghwa"],
-#         "12": ["lmj__010129"],
-#         "13": ["lmj__010129"],
-#     },
-#     "fri": {
-#         "1": ["formjonghwa"],
-#         "2": ["dev_ung", "formjonghwa", "lmj__010129"],
-#         "3": ["jihye"],
-#         "6": ["dev_ung", "formjonghwa", "lmj__010129"],
-#         "7": ["lmj__010129"],
-#     },
-#     "sat": {7: ["dev_ung", "formjonghwa", "lmj__010129"], 8: ["jihye"]},
-#     "sun": {},
-# }
-# Drawer.getImageFromTimeTableDictionary(test_dict, "group")

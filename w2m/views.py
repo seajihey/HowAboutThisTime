@@ -1,3 +1,5 @@
+import os, cv2
+
 from django.shortcuts import render
 from django.http import JsonResponse, FileResponse
 from rest_framework.generics import *
@@ -7,29 +9,27 @@ from .serializers import UserSerializer, GroupSerializer
 from .table_detection import TableDetector
 from .opencv_draw_picture import Drawer
 
-
-import os, cv2
-
 BASE_PATH = os.path.dirname(os.path.abspath(__file__))
 BASE_PATH = BASE_PATH[: BASE_PATH.find("w2m") - 1]
 
 
-##페이지##
+""" 메인 페이지 """
+
+
 def main(request):
     return render(request, "main.html")
 
 
-#### restapi ####
+""" RESTful API (CRUD) for User """
+
+
+# CREATE User
 class UserList(ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
 
-class UserDelete(DestroyAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-
-
+# READ User(s)
 class UserDetail(RetrieveAPIView):
     # authentication_classes = (TokenAuthentication,)
     # permission_classes = (IsAuthenticated,) # 토큰인증은 ... 넣/말 고민중
@@ -37,6 +37,22 @@ class UserDetail(RetrieveAPIView):
     serializer_class = UserSerializer
 
 
+# UPDATE User
+class UserUpdate(UpdateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+# DELETE User
+class UserDelete(DestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+""" RESTful API (CRUD) for Group """
+
+
+# CREATE Group
 class GroupList(ListCreateAPIView):
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -81,11 +97,13 @@ class GroupList(ListCreateAPIView):
     serializer_class = GroupSerializer
 
 
+# READ Group
 class GroupDetail(RetrieveAPIView):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
 
 
+# UPDATE Group
 class GroupUpdate(UpdateAPIView):
     def patch(self, request, *args, **kwargs):
         kwargs["partial"] = True
@@ -122,11 +140,13 @@ class GroupUpdate(UpdateAPIView):
     serializer_class = GroupSerializer
 
 
+# DELETE Group
 class GroupDelete(DestroyAPIView):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
 
 
+# DOWNLOAD GroupImage
 class GroupImage(RetrieveAPIView):
     def get(self, request, *args, **kwargs):
         group_instance = self.get_object()
