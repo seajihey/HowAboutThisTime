@@ -22,12 +22,16 @@ class User(models.Model):
 
     def save(self, *args, **kwargs):
         try:
-            """GROUP CREATION FAILED"""
             mode = args[0]
             if mode == "create_group":
                 super().save((), **kwargs)
+                return
             elif mode == "update_group":
                 super().save((), **kwargs)
+                return
+            elif mode == "exit_group":
+                super().save((), **kwargs)
+                return
         except:
             if self.img:
                 file_type = self.img.url[self.img.url.index(".") + 1 :]
@@ -40,6 +44,8 @@ class User(models.Model):
                         g.write(all_data)
             if self.img:
                 os.remove(BASE_PATH + self.img.url)
+                return
+        super().save(*args, **kwargs)
 
 
 class Group(models.Model):
