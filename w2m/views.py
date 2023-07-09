@@ -27,14 +27,56 @@ def main(request):
 
 # CREATE User
 class UserList(ListCreateAPIView):
+    def get(self, request, *args, **kwargs):
+        if request.data:
+            mode = request.data["mode"]
+            if mode == "find_id":
+                try:
+                    user_instance = User.objects.get(email=request.data["email"])
+                    if user_instance.name == request.data["name"]:
+                        return JsonResponse(
+                            {
+                                "id": user_instance.id,
+                            }
+                        )
+                    else:
+                        return JsonResponse(
+                            {
+                                "status": "404 Not Found",
+                            }
+                        )
+                except:
+                    return JsonResponse(
+                        {
+                            "status": "404 Not Found",
+                        }
+                    )
+            elif mode == "reset_pw":
+                pass
+                # try:
+                #     user_instance = User.objects.get(email=request.data["email"])
+                #     if user_instance.name == request.data["name"]:
+                #         return JsonResponse({
+                #             "id": user_instance.id,
+                #         })
+                #     else:
+                #         return JsonResponse({
+                #             "status": "404 Not Found",
+                #         })
+                # except:
+                #     return JsonResponse({
+                #             "status": "404 Not Found",
+                #         })
+
+        else:
+            return self.list(request, *args, **kwargs)
+
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
 
 # READ User(s)
 class UserDetail(RetrieveAPIView):
-    # authentication_classes = (TokenAuthentication,)
-    # permission_classes = (IsAuthenticated,) # 토큰인증은 ... 넣/말 고민중
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
@@ -177,26 +219,59 @@ class GroupDetail(RetrieveAPIView):
 # UPDATE Group
 class GroupUpdate(UpdateAPIView):
     def patch(self, request, *args, **kwargs):
-        kwargs["partial"] = True
-
-        group_instance = self.get_object()
-        user_instance = User.objects.get(id=request.data["group_users"])
-
-        group_instance.group_users.add(user_instance.id)
-        user_instance.belonging_groups.add(group_instance.group_code)
-
-        user_instance.save("update_group")
-
-        if user_instance.img_path:
-            group_instance.group_unavailable_datetimes = (
-                TableDetector.getUnavailableDatetime(
-                    user_instance.img_path,
-                    group_instance.group_unavailable_datetimes,
-                    user_instance.id,
+        if "personal_unavailable" in request.data:  # 불가능 추가
+            group_instance = self.get_object()
+            user_id = request.data["group_users"]
+            str_datetime = request.data["personal_unavailable"]
+            day, class_time = str_datetime.split(
+                "_"
+            )  # class_time should not be start with '0'
+            if class_time not in group_instance.group_unavailable_datetimes[day]:
+                group_instance.group_unavailable_datetimes[day][class_time] = [user_id]
+            else:
+                group_instance.group_unavailable_datetimes[day][class_time].append(
+                    user_id
                 )
-            )
 
-        group_instance.save()
+            sorted_unavailable_datetimes = dict()
+
+            for key in TableDetector.DATE.values():
+                sorted_unavailable_datetimes[key] = dict()
+
+            for key in TableDetector.DATE.values():  # mon, tue, wed, thu, fri, sat, sun
+                sorted_keys = map(
+                    str,
+                    sorted(
+                        map(int, group_instance.group_unavailable_datetimes[key].keys())
+                    ),
+                )
+
+                for sorted_key in sorted_keys:
+                    sorted_unavailable_datetimes[key][
+                        sorted_key
+                    ] = group_instance.group_unavailable_datetimes[key][sorted_key]
+
+            group_instance.group_unavailable_datetimes = sorted_unavailable_datetimes
+
+            group_instance.save()
+        else:  # 단순 유저 추가
+            group_instance = self.get_object()
+            user_instance = User.objects.get(id=request.data["group_users"])
+
+            group_instance.group_users.add(user_instance.id)
+            user_instance.belonging_groups.add(group_instance.group_code)
+            user_instance.save("update_group")
+
+            if user_instance.img_path:
+                group_instance.group_unavailable_datetimes = (
+                    TableDetector.getUnavailableDatetime(
+                        user_instance.img_path,
+                        group_instance.group_unavailable_datetimes,
+                        user_instance.id,
+                    )
+                )
+
+            group_instance.save()
 
         return JsonResponse(
             {
