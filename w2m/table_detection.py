@@ -74,7 +74,7 @@ class TableDetector:
             sorted_unavailable_datetimes[key] = dict()
 
         for key in TableDetector.DATE.values():  # mon, tue, wed, thu, fri, sat, sun
-            sorted_keys = sorted(unavailable_datetimes[key].keys())  # 2, 3, 6, 8
+            sorted_keys = map(str, sorted(map(int, unavailable_datetimes[key].keys())))
 
             for sorted_key in sorted_keys:
                 sorted_unavailable_datetimes[key][sorted_key] = unavailable_datetimes[
