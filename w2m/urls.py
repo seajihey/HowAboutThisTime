@@ -14,6 +14,8 @@ urlpatterns = [
     path("group/<pk>/", GroupDetail.as_view()),
     path("group/update/<pk>/", GroupUpdate.as_view()),
     path("group/delete/<pk>/", GroupDelete.as_view()),
+    # 그룹 나가기
+    path("user/exit/<pk>/", UserExit.as_view()),
     # image (특정 그룹에 대해 시간표 다운로드)
     path("group/image/<pk>/", GroupImage.as_view()),
 ]
