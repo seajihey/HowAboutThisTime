@@ -1,0 +1,168 @@
+/* 왼쪽 내용들 */
+.sidebar {
+    height: 100vh;
+    width: 15rem;
+    background-color: white;
+    padding: 2rem;
+}
+.room_part {
+    margin-top: 4rem;
+}
+.room_part_item {
+    padding: 0.5rem;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;    
+}
+.room_part_title {
+    font-size: 18px;
+    font-weight: bold;
+    width: fit-content; 
+}
+.room_info {
+    font-size: 18px;
+    margin-top: 3rem;   
+}
+.right_contents {
+    padding: 20rem;
+}
+.leftsquare {
+    width: fit-content;
+}
+.name{
+    width: 120px;
+    height: 48px;
+    border-radius: 24px;
+}
+
+.user {
+    width:36px;
+    width:36px;
+    margin-right: 1rem;
+}
+
+/* 버튼들 */
+.share_button {
+    width: 190px;
+    height: 50px;
+    background-color: #BDC5FF;
+    border-radius: 22px;
+    margin-top: 26rem;
+    margin-left: -24rem;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    
+}
+.save_button {
+    width: 190px;
+    height: 50px;
+    background-color: #BDC5FF;
+    border-radius: 22px;
+    position: absolute;
+    top: 93%;
+    right: 33%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    z-index: 100;
+}
+.plus1 {
+    position: relative;
+    left: 7px;
+    width: 24px;
+    height: 24px;
+}
+.plus2 {
+    position: relative;
+    left: 7px;
+    width: 24px;
+    height: 24px;
+}
+.add {
+    width: 12rem;
+    height: 3rem;
+    background-color: #BDC5FF;
+    border-radius: 22px;
+    margin-top: 5rem;
+
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+/* 오른쪽 내용들 */
+.minimum_people {
+    width: 13rem;
+    height: 3rem;
+    background-color: white;
+    border-radius: 35px;  
+    color: black;
+    font-size: 18px;
+    margin-top: -7rem;
+    margin-left: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.arrow {
+   width: fit-content;
+   margin-top: -2.3rem;
+   margin-left: 31rem;  
+}
+.rank_square {
+    width: 11rem;
+    height: 11rem;
+    background-color: white;
+    border-radius: 35px;
+    margin-top: 3.5rem;
+    margin-left: 21rem;
+}
+.square1 {
+    width:1.2rem;
+    height: 1.2rem;
+    background-color: #164DCA;
+    margin-top: -8rem;
+    margin-left: 24.1rem;  
+}
+.square2 {
+    width:1.2rem;
+    height: 1.2rem;
+    background-color: #BDC5FF;
+    margin-top:1rem;
+    margin-left: 24.1rem;   
+}
+.square3 {
+    width:1.2rem;
+    height: 1.2rem;
+    background-color: #F0EDFF;
+    margin-top:1rem;
+    margin-left: 24.1rem;    
+}
+.rank1 {
+    padding-top: 2.9rem;
+    padding-left: 5rem;
+}
+.rank2 {
+    padding-top: 0.8rem;
+    padding-left: 5rem;
+}
+.rank3 {
+    padding-top: 0.9rem;
+    padding-left: 5rem;
+}

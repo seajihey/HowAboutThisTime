@@ -1,3 +1,13 @@
+.table {
+    width: 45rem;
+    height: 40rem;
+    background-color: white;
+    border-radius: 75px;
+    position: absolute;
+    top: 11rem;
+    left: 30rem;
+    z-index: -2;
+}
 /* 월요일 */
 .mon_1 {
     position: absolute;
@@ -583,66 +593,59 @@
 /* 요일 */
 .day {
     position: absolute;
-    top:190px;
+    top:12rem;
     left: 567px;
     font-size: 18px;
     letter-spacing: 74px;
     color: #828282; 
 }
-.sat {
-    position: absolute;
-    top: 190px;
-    left: 1027px;
-    font-size: 18px;
-    color: blue;
-}
-.sun {
-    position: absolute;
-    top: 190px;
-    left: 1117px;
-    font-size: 18px;
-    color: red;
-}
+
 
 /* 시간 */
+.main_contents {
+    padding: 5rem;
+}
 .time {
-    position: absolute;
-    top: 220px;
-    left: 505px;
+    padding-top: 12rem;
+    padding-left: 12rem;
     font-size: 18px;
     color: #828282;
-    line-height: 50px;
+    line-height: 50px;   
+}
+._09 {
+    margin-top: -3.5rem;
+    margin-left: -1.5rem;
 }
 ._10 {
-    position: relative;
-    top: 16px;
+    margin-top: 1rem;
+    margin-left: -1.5rem;
 }
 ._11 {
-    position: relative;
-    top:30px;
+    margin-top: 0.9rem;
+    margin-left: -1.5rem;
 }
 ._12 {
-    position: relative;
-    top:44px;
+    margin-top: 0.8rem;
+    margin-left: -1.5rem;
 }  
 ._13 {
-    position: relative;
-    top:58px;
+    margin-top: 0.9rem;
+    margin-left: -1.5rem;
 }
 ._14 {
-    position: relative;
-    top:70px;
+    margin-top: 0.9rem;
+    margin-left: -1.5rem;
 }
 ._15 {
-    position: relative;
-    top:84px;
+    margin-top: 1rem;
+    margin-left: -1.5rem;
 }
 ._16 {
-    position: relative;
-    top:98px;
+    margin-top: 0.7rem;
+    margin-left: -1.5rem;
 }
 ._17 {
-    position: relative;
-    top:108px;
+    margin-top: 0.8rem;
+    margin-left: -1.5rem;
 }
 
