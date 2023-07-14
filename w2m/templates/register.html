@@ -1,70 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sing</title>
-    <link rel="stylesheet" href="../css/signupPage/style.css">
-</head>
-<body class="mainpage">
+    <link rel="stylesheet" href="../css/signupPage/style.css" />
+  </head>
+  <body class="mainpage">
     <div class="gnb">
-        <div class="gnb_logo_box">
-            <img src="./src/img/logo.png" style="visibility: hidden;">
-        </div>
+      <div class="gnb_logo_box">
+        <img src="./src/img/logo.png" style="visibility: hidden" />
+      </div>
 
-        <div class="logo">
-            <img src="./src/img/logo.png">
-        </div>
+      <div class="logo">
+        <img src="./src/img/logo.png" />
+      </div>
 
-        <div class="nav">
-            <span class="navitem login">
-                로그인
-            </span>
+      <div class="nav">
+        <span class="navitem login"> 로그인 </span>
+      </div>
+    </div>
+    <div class="mainSignup" style="margin-top: 50px">
+      <form>
+        <div class="required" class="star">필수 항목</div>
+        <div class="name">
+          <label for="name" class="star">이름</label>
+          <input id="name" type="text" placeholder="이름을 입력해주세요" />
         </div>
+        <div class="idId">
+          <label for="idId" class="star">아이디</label>
+          <input id="idId" type="text" placeholder="아이디를 입력해주세요" />
+        </div>
+        <div class="password">
+          <label for="password" class="star">비밀번호</label>
+          <input
+            id="password"
+            type="text"
+            placeholder="비밀번호를 입력해주세요"
+          />
+        </div>
+        <div class="checkPassword">
+          <label for="checkPassword">비밀번호 확인</label>
+          <input
+            id="checkPassword"
+            type="text"
+            placeholder="비밀번호를 한 번 더 입력해주세요"
+          />
+        </div>
+        <div class="mail">
+          <label for="mail">(선택) 복구 이메일</label>
+          <input id="mail" type="email" placeholder="이메일을 입력해주세요" />
+        </div>
+        <div class="schedule">
+          <label for="schedule">(선택) 시간표 등록</label>
+          <div class="scheduleBox">
+            에브리타임 시간표 이미지를 업로드해주세요
+            <div class="inputWrapper">
+              <div class="file-upload">
+                <label for="file-input" class="custom-button">업로드</label>
+                <input id="file-input" type="file" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="uploadNotice">
+          추후에 마이페이지에서 시간표를 업로드할 수 있습니다.
+        </div>
+        <div class="personalInfo">
+          <input
+            type="checkbox"
+            name="personalInfoCheck"
+            value="personalInfoCheck"
+            id="personalInfoCheck"
+          />
+          개인정보 수집 및 이용 동의
+          <span>보기</span>
+        </div>
+        <button>가입</button>
+      </form>
     </div>
-    <div class="mainSignup" style="margin-top: 50px;">
-        <form>
-            <div class="required" class="star">필수 항목</div>
-            <div class="name">
-                <label for="name" class="star">이름</label>
-                <input id="name" type="text" placeholder="이름을 입력해주세요">
-            </div>
-            <div class="idId">
-                <label for="idId" class="star">아이디</label>
-                <input id="idId" type="text" placeholder="아이디를 입력해주세요">
-            </div>
-            <div class="password">
-                <label for="password" class="star">비밀번호</label>
-                <input id="password" type="text" placeholder="비밀번호를 입력해주세요">
-            </div>
-            <div class="checkPassword">
-                <label for="checkPassword">비밀번호 확인</label>
-                <input id="checkPassword" type="text" placeholder="비밀번호를 한 번 더 입력해주세요">
-            </div>
-            <div class="mail">
-                <label for="mail">(선택) 복구 이메일</label>
-                <input id="mail" type="email" placeholder="이메일을 입력해주세요">
-            </div>
-            <div class="schedule">
-                <label for="schedule">(선택) 시간표 등록</label>
-                <div class="scheduleBox">
-                    에브리타임 시간표 이미지를 업로드해주세요
-                    <div class="inputWrapper">
-                        <div class="file-upload">
-                            <label for="file-input" class="custom-button">업로드</label>
-                            <input id="file-input" type="file">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="uploadNotice">추후에 마이페이지에서 시간표를 업로드할 수 있습니다.</div>
-            <div class="personalInfo">
-                <input type="checkbox" name="personalInfoCheck" value="personalInfoCheck" id="personalInfoCheck">
-                개인정보 수집 및 이용 동의
-                <span>보기</span>
-            </div>
-            <button>가입</button>
-        </form>
-    </div>
-</body>
+  </body>
 </html>
