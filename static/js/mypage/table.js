@@ -22,7 +22,7 @@ export class Table{
             if(i % 7 == 0){
                 this.mytable.appendChild(this.createTime((i/7)+9));
             }
-            const newblock = this.createBlock();
+            const newblock = this.createBlock(i);
             this.mytable.appendChild(newblock);
         }
     }
@@ -49,9 +49,11 @@ export class Table{
         return newTime;
     }
 
-    createBlock(color = "white"){
+    createBlock(color = "white", id){
         const newBlock = document.createElement('div');
         newBlock.classList.add("table_block");
+        newBlock.setAttribute("id", id);
+        newBlock.textContent = `${id}`;
         newBlock.style.backgroundColor = `${color}`;
 
         return newBlock;

@@ -12,10 +12,19 @@ class Main{
     getdata(){
         fetch('http://127.0.0.1:8000/api/user/lmj__010129/')
         .then((response) =>{
-            console.log(response);
-            console.log(response.json());
-            console.log(JSON.stringify(response));
-            console.log(JSON.stringify(response.json()));
+            return response.json();
+        }).then( json => {
+            console.log(json);
+            let a = json.name;
+
+            let timetable = {"mon" :{
+                "1" : ["tjsgh531"],
+                "2" : ["tjsgh531"]
+            }};
+
+            console.log(timetable["mon"]["1"].length);
+
+            console.log(a);
         }); 
     }
 
