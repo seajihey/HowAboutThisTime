@@ -1,0 +1,34 @@
+@import url(./table.css);
+@import url(./sidebar.css);
+@import url(./gnb.css);
+@import url(./group_list.css);
+
+div{
+    box-sizing: border-box;
+}
+html, body{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+body{
+    background-color: #F6F7F9;
+}
+.unactive{
+    display: none;
+}
+
+.main{
+    position: absolute;
+    top: 7rem;
+
+    display: flex;
+
+    width: 100vw;
+    height:calc(100vh - 7rem);
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
