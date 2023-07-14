@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mainpage</title>
-    <link rel="stylesheet" href="./src/css/mainpage/style.css">
-    <script src="./src/js/loginModal.js" defer></script>
+    <link rel="stylesheet" href="../css/mainpage/style.css">
+    <script src="../js/mainpage/loginModal.js" defer></script>
 </head>
 <body class="mainpage">
     <div class="gnb">
@@ -19,14 +19,16 @@
 
         <div class="nav">
             <span class="navitem login">
-                <button id="open">
+                <span id="open">
                 로그인
-                </button>
+                </span>
+
+                <span class="navitem signUp">
+                    회원가입
+                </span>
             </span>
             
-            <span class="navitem signUp">
-                회원가입
-            </span>
+            
         </div>
 
         
@@ -35,19 +37,21 @@
             <div class="modalContent">
                 <h1>로그인</h1>
                 <button class="closeBtn">X</button>
-                <div class="IdPassword">
-                    <input type="text" id="loginId" placeholder="아이디">
-                    <input type="text" id="loginPassword" placeholder="비밀번호">
-                </div>
-                <div class="loginCheck">
-                    <label for="IdSaveCheck">
-                        <input type="checkbox" name="IdSave" id="IdSaveCheck">아이디 저장
-                    </label>
-                    <label for="autoLoginCheck">
-                        <input type="checkbox" name="autoLogin" id="autoLoginCheck">자동 로그인
-                    </label>
-                </div>
-                <button class="loginBtn">로그인</button>
+                <form>
+                    <div class="IdPassword">
+                        <input type="text" id="loginId" placeholder="아이디">
+                        <input type="text" id="loginPassword" placeholder="비밀번호">
+                    </div>
+                    <div class="loginCheck">
+                        <label for="IdSaveCheck">
+                            <input type="checkbox" name="IdSave" id="IdSaveCheck">아이디 저장
+                        </label>
+                        <label for="autoLoginCheck">
+                            <input type="checkbox" name="autoLogin" id="autoLoginCheck">자동 로그인
+                        </label>
+                    </div>
+                    <button class="loginBtn">로그인</button>
+                </form>
                 <div class="option">
                     <a href="">아이디 찾기</a> ㅣ <a href="">비밀번호 재설정 </a> ㅣ <a href="signupPage.html">회원가입</a>
                 </div>
