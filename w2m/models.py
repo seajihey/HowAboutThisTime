@@ -19,6 +19,7 @@ class User(models.Model):
     img = models.ImageField(upload_to="", blank=True, null=True)
     img_path = models.CharField(max_length=255, blank=True, null=True)
     belonging_groups = models.ManyToManyField(to="Group", blank=True)
+    my_unavailable_datetimes = models.JSONField(blank=True, default=dict)
 
     def save(self, *args, **kwargs):
         try:
@@ -30,6 +31,9 @@ class User(models.Model):
                 super().save((), **kwargs)
                 return
             elif mode == "exit_group":
+                super().save((), **kwargs)
+                return
+            elif mode == "add_my_time_table":
                 super().save((), **kwargs)
                 return
         except:
