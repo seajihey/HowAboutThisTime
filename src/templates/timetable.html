@@ -5,181 +5,150 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이때어때?</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./gnb.css">
-    <link rel="stylesheet" href="timetable.css">
-    <script src="./main.js"></script>
+    <link rel="stylesheet" href="../css/timetable/style.css">
+    <script src="../js/timetable.js" defer></script>
 </head>
 <body>
-   <div>
-    <div class="text1">
-        <p>그룹명:</p>
-        <p>초대코드:</p></div>
-        
-        
-        
-        <p class="text2">팀원</p>
-    
-        <div class="bar"></div>
-        <div class="names">
-            <div class="name1"></div>
-            <div class="name2"></div>
-            <div class="name3"></div>
-            <div class="name4"></div>
+    <div class="gnb">
+        <div class="gnb_logo_box">
+            <img src="../img/logo.png" style="visibility: hidden;">
         </div>
-        <div class="user">
-            <div class="user1">
-                <img src="./user.png">
-            </div>
-            <div class="user2">
-                <img src="./user.png">
-            </div>
-            <div class="user3">
-                <img src="./user.png">
-            </div>
-            <div class="user4">
-                <img src="./user.png">
-            </div>
-        </div>
-        <div class="add">추가하기</div>
+        <div class="logo"><img src="../img/logo.png"></div>
+    </div>
 
-        <div class="table">
-            <div class="etc1">
-                <p>최소 가능 인원</p>
-                <div class="arrow">
-                    <img src="./화살표.png">
+    <div class="main">
+        <div class="sidebar">
+        
+        <div class="room_info">
+            <div>그룹명:</div>
+            <div>초대코드:</div>
+        </div>
+
+        <div class="room_part">
+            <div class="room_part_title">팀원</div>
+            <div class="room_part_items"></div>
+            <div class="add">추가하기</div>
+      
+    </div>
+
+        
+                
+            
+    </div>
+
+        <div class="main_contents">
+            <div class="day">월화수목금토일</div> 
+            <div class="table"></div>
+       
+
+            <div class="time">
+                <div class="_09">09</div>
+                <div class="_10">10</div>
+                <div class="_11">11</div>
+                <div class="_12">12</div>
+                <div class="_13">13</div>
+                <div class="_14">14</div>
+                <div class="_15">15</div>
+                <div class="_16">16</div>
+                <div class="_17">17</div>
+            </div>
+            
+            
+            <div class="parent">
+                <div class="mon_1"></div>
+                <div class="mon_2"></div>
+                <div class="mon_3"></div>
+                <div class="mon_4"></div>
+                <div class="mon_5"></div>
+                <div class="mon_6"></div>
+                <div class="mon_7"></div>
+                <div class="mon_8"></div>
+                <div class="mon_9"></div>
+
+                <div class="tue_1"></div>
+                <div class="tue_2"></div>
+                <div class="tue_3"></div>
+                <div class="tue_4"></div>
+                <div class="tue_5"></div>
+                <div class="tue_6"></div>
+                <div class="tue_7"></div>
+                <div class="tue_8"></div>
+                <div class="tue_9"></div>
+
+                <div class="wed_1"></div>
+                <div class="wed_2"></div>
+                <div class="wed_3"></div>
+                <div class="wed_4"></div>
+                <div class="wed_5"></div>
+                <div class="wed_6"></div>
+                <div class="wed_7"></div>
+                <div class="wed_8"></div>
+                <div class="wed_9"></div>
+
+                <div class="thu_1"></div>
+                <div class="thu_2"></div>
+                <div class="thu_3"></div>
+                <div class="thu_4"></div>
+                <div class="thu_5"></div>
+                <div class="thu_6"></div>
+                <div class="thu_7"></div>
+                <div class="thu_8"></div>
+                <div class="thu_9"></div>
+
+                <div class="fri_1"></div>
+                <div class="fri_2"></div>
+                <div class="fri_3"></div>
+                <div class="fri_4"></div>
+                <div class="fri_5"></div>
+                <div class="fri_6"></div>
+                <div class="fri_7"></div>
+                <div class="fri_8"></div>
+                <div class="fri_9"></div>
+
+                <div class="sat_1"></div>
+                <div class="sat_2"></div>
+                <div class="sat_3"></div>
+                <div class="sat_4"></div>
+                <div class="sat_5"></div>
+                <div class="sat_6"></div>
+                <div class="sat_7"></div>
+                <div class="sat_8"></div>
+                <div class="sat_9"></div>
+                
+                <div class="sun_1"></div>
+                <div class="sun_2"></div>
+                <div class="sun_3"></div>
+                <div class="sun_4"></div>
+                <div class="sun_5"></div>
+                <div class="sun_6"></div>
+                <div class="sun_7"></div>
+                <div class="sun_8"></div>
+                <div class="sun_9"></div>
+            </div>
+        </div>
+   
+        <div class="right_contents">
+                <div class="minimum_people">최소 가능 인원</div>
+                <div class="arrow"><img src="../img/화살표.png"></div>
+                <div class="rank_square">
+                    <div class="rank1">1순위</div>
+                    <div class="rank2">2순위</div>
+                    <div class="rank3">3순위</div>
                 </div>
-            </div>
-            <div class="etc2">
-                <div class="rank1">1순위</div>
-                <div class="rank2">2순위</div>
-                <div class="rank3">3순위</div>
-            </div>
-            <div class="square">
-                <div class="square1"></div>
-                <div class="square2"></div>
-                <div class="square3"></div>
-            </div>
+                <div class="square">
+                    <div class="square1"></div>
+                    <div class="square2"></div>
+                    <div class="square3"></div>
+                </div>
+            <button class="share_button">공유하기<div class="plus1"><img src="../img/plus.png"></div></button></div>
+            <button class="save_button">저장하기<div class="plus2"><img src="../img/plus.png"></div></button></div>    
         </div>
-        <button class="share_button">공유하기<div class="plus1"><img src="./plus.png"></div></button>
-        <div class="share_popup">
-            <h2></h2> 
-            <button class="share_exit">닫기</button>   
+       
+       <div class="logout">로그아웃
+            <div class="button_image"><img src="../img/exit_button.png"></div>
         </div>
 
-        <button class="save_button">저장하기<div class="plus2"><img src="./plus.png"></div></button>
         
-        <div class="gnb">
-            <div class="gnb_logo_box">
-                <img src="./src/img/logo.png" style="visibility: hidden;">
-            </div>
-    
-            <div class="logo">
-                <img src="./src/img/logo.png">
-            </div>
-            
-        </div>
-        
-        <div class="save_popup">
-            <div class="save_exit"></div>
-        </div>
-
-        <div class="logout">로그아웃
-            <div class="button_image"><img src="exit_button.png"></div>
-        </div>
-
-        <div class="over">
-            
-        </div>
-
-        <div class="day">월화수목금</div> 
-        <div class="sat">토</div>
-        <div class="sun">일</div>
-
-        <div class="time">
-            <div class="_09">09</div>
-            <div class="_10">10</div>
-            <div class="_11">11</div>
-            <div class="_12">12</div>
-            <div class="_13">13</div>
-            <div class="_14">14</div>
-            <div class="_15">15</div>
-            <div class="_16">16</div>
-            <div class="_17">17</div>
-        </div>
-        
-        
-        <div class="parent">
-            <div class="mon_1"></div>
-            <div class="mon_2"></div>
-            <div class="mon_3"></div>
-            <div class="mon_4"></div>
-            <div class="mon_5"></div>
-            <div class="mon_6"></div>
-            <div class="mon_7"></div>
-            <div class="mon_8"></div>
-            <div class="mon_9"></div>
-
-            <div class="tue_1"></div>
-            <div class="tue_2"></div>
-            <div class="tue_3"></div>
-            <div class="tue_4"></div>
-            <div class="tue_5"></div>
-            <div class="tue_6"></div>
-            <div class="tue_7"></div>
-            <div class="tue_8"></div>
-            <div class="tue_9"></div>
-
-            <div class="wed_1"></div>
-            <div class="wed_2"></div>
-            <div class="wed_3"></div>
-            <div class="wed_4"></div>
-            <div class="wed_5"></div>
-            <div class="wed_6"></div>
-            <div class="wed_7"></div>
-            <div class="wed_8"></div>
-            <div class="wed_9"></div>
-
-            <div class="thu_1"></div>
-            <div class="thu_2"></div>
-            <div class="thu_3"></div>
-            <div class="thu_4"></div>
-            <div class="thu_5"></div>
-            <div class="thu_6"></div>
-            <div class="thu_7"></div>
-            <div class="thu_8"></div>
-            <div class="thu_9"></div>
-
-            <div class="fri_1"></div>
-            <div class="fri_2"></div>
-            <div class="fri_3"></div>
-            <div class="fri_4"></div>
-            <div class="fri_5"></div>
-            <div class="fri_6"></div>
-            <div class="fri_7"></div>
-            <div class="fri_8"></div>
-            <div class="fri_9"></div>
-
-            <div class="sat_1"></div>
-            <div class="sat_2"></div>
-            <div class="sat_3"></div>
-            <div class="sat_4"></div>
-            <div class="sat_5"></div>
-            <div class="sat_6"></div>
-            <div class="sat_7"></div>
-            <div class="sat_8"></div>
-            <div class="sat_9"></div>
-            
-            <div class="sun_1"></div>
-            <div class="sun_2"></div>
-            <div class="sun_3"></div>
-            <div class="sun_4"></div>
-            <div class="sun_5"></div>
-            <div class="sun_6"></div>
-            <div class="sun_7"></div>
-            <div class="sun_8"></div>
-            <div class="sun_9"></div>
-        </div>
    </div> 
    
 
