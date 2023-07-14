@@ -1,0 +1,648 @@
+/* 월요일 */
+.mon_1 {
+    position: absolute;
+    
+    top:230px;
+    left: 535px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.mon_2 {
+    position: fixed;
+    position: absolute;
+    top:294px;
+    left: 535px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.mon_3 {
+    position: absolute;
+    top:358px;
+    left: 535px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.mon_4 {
+    position: absolute;
+    top:422px;
+    left: 535px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.mon_5 {
+    position: absolute;
+    top:486px;
+    left: 535px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.mon_6 {
+    position: absolute;
+    top:550px;
+    left: 535px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.mon_7 {
+    position: absolute;
+    top:614px;
+    left: 535px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.mon_8 {
+    position: absolute;
+    top:678px;
+    left: 535px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.mon_9 {
+    position: absolute;
+    top:742px;
+    left: 535px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+
+/* 화요일 */
+.tue_1 {
+    position: absolute;
+    top:230px;
+    left: 627px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px; 
+}
+.tue_2 {
+    position: absolute;
+    top:294px;
+    left: 627px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px; 
+}
+.tue_3 {
+    position: absolute;
+    top:358px;
+    left: 627px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px; 
+}
+.tue_4 {
+    position: absolute;
+    top:422px;
+    left: 627px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px; 
+}
+.tue_5 {
+    position: absolute;
+    top:486px;
+    left: 627px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px; 
+}
+.tue_6 {
+    position: absolute;
+    top:550px;
+    left: 627px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px; 
+}
+.tue_7 {
+    position: absolute;
+    top:614px;
+    left: 627px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px; 
+}
+.tue_8 {
+    position: absolute;
+    top:678px;
+    left: 627px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px; 
+}
+.tue_9 {
+    position: absolute;
+    top:742px;
+    left: 627px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px; 
+}
+
+/* 수요일 */
+.wed_1 {
+    position: absolute;
+    top:230px;
+    left: 719px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.wed_2 {
+    position: absolute;
+    top:294px;
+    left: 719px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.wed_3 {
+    position: absolute;
+    top:358px;
+    left: 719px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.wed_4 {
+    position: absolute;
+    top:422px;
+    left: 719px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.wed_5 {
+    position: absolute;
+    top:486px;
+    left: 719px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.wed_6 {
+    position: absolute;
+    top:550px;
+    left: 719px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.wed_7 {
+    position: absolute;
+    top:614px;
+    left: 719px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.wed_8 {
+    position: absolute;
+    top:678px;
+    left: 719px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.wed_9 {
+    position: absolute;
+    top:742px;
+    left: 719px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+
+/* 목요일 */
+.thu_1 {
+    position: absolute;
+    top:230px;
+    left: 811px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.thu_2 {
+    position: absolute;
+    top:294px;
+    left: 811px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.thu_3 {
+    position: absolute;
+    top:358px;
+    left: 811px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.thu_4 {
+    position: absolute;
+    top:422px;
+    left: 811px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.thu_5 {
+    position: absolute;
+    top:486px;
+    left: 811px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.thu_6 {
+    position: absolute;
+    top:550px;
+    left: 811px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.thu_7 {
+    position: absolute;
+    top:614px;
+    left: 811px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.thu_8 {
+    position: absolute;
+    top:678px;
+    left: 811px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.thu_9 {
+    position: absolute;
+    top:742px;
+    left: 811px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+
+/* 금요일 */
+.fri_1 {
+    position: absolute;
+    top:230px;
+    left: 903px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}.fri_2 {
+    position: absolute;
+    top:294px;
+    left: 903px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.fri_3 {
+    position: absolute;
+    top:358px;
+    left: 903px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.fri_4 {
+    position: absolute;
+    top:422px;
+    left: 903px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.fri_5 {
+    position: absolute;
+    top:486px;
+    left: 903px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.fri_6 {
+    position: absolute;
+    top:550px;
+    left: 903px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.fri_7 {
+    position: absolute;
+    top:614px;
+    left: 903px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.fri_8 {
+    position: absolute;
+    top:678px;
+    left: 903px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.fri_9 {
+    position: absolute;
+    top:742px;
+    left: 903px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+
+/* 토요일 */
+.sat_1 {
+    position: absolute;
+    top:230px;
+    left: 995px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.sat_2 {
+    position: absolute;
+    top:294px;
+    left: 995px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.sat_3 {
+    position: absolute;
+    top:358px;
+    left: 995px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.sat_4 {
+    position: absolute;
+    top:422px;
+    left: 995px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.sat_5 {
+    position: absolute;
+    top:486px;
+    left: 995px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.sat_6 {
+    position: absolute;
+    top:550px;
+    left: 995px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.sat_7 {
+    position: absolute;
+    top:614px;
+    left: 995px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.sat_8 {
+    position: absolute;
+    top:678px;
+    left: 995px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.sat_9 {
+    position: absolute;
+    top:742px;
+    left: 995px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+
+/* 일요일 */
+.sun_1 {
+    position: absolute;
+    top:230px;
+    left: 1087px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.sun_2 {
+    position: absolute;
+    top:294px;
+    left: 1087px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.sun_3 {
+    position: absolute;
+    top:358px;
+    left: 1087px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.sun_4 {
+    position: absolute;
+    top:422px;
+    left: 1087px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.sun_5 {
+    position: absolute;
+    top:486px;
+    left: 1087px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.sun_6 {
+    position: absolute;
+    top:550px;
+    left: 1087px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.sun_7 {
+    position: absolute;
+    top:614px;
+    left: 1087px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.sun_8 {
+    position: absolute;
+    top:678px;
+    left: 1087px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+.sun_9 {
+    position: absolute;
+    top:742px;
+    left: 1087px;
+    width: 82px;
+    height: 54px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+}
+
+/* 요일 */
+.day {
+    position: absolute;
+    top:190px;
+    left: 567px;
+    font-size: 18px;
+    letter-spacing: 74px;
+    color: #828282; 
+}
+.sat {
+    position: absolute;
+    top: 190px;
+    left: 1027px;
+    font-size: 18px;
+    color: blue;
+}
+.sun {
+    position: absolute;
+    top: 190px;
+    left: 1117px;
+    font-size: 18px;
+    color: red;
+}
+
+/* 시간 */
+.time {
+    position: absolute;
+    top: 220px;
+    left: 505px;
+    font-size: 18px;
+    color: #828282;
+    line-height: 50px;
+}
+._10 {
+    position: relative;
+    top: 16px;
+}
+._11 {
+    position: relative;
+    top:30px;
+}
+._12 {
+    position: relative;
+    top:44px;
+}  
+._13 {
+    position: relative;
+    top:58px;
+}
+._14 {
+    position: relative;
+    top:70px;
+}
+._15 {
+    position: relative;
+    top:84px;
+}
+._16 {
+    position: relative;
+    top:98px;
+}
+._17 {
+    position: relative;
+    top:108px;
+}
+

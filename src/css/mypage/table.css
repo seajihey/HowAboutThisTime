@@ -1,0 +1,107 @@
+
+.contain{
+    position: relative;
+    top: 3rem; left:3rem;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 1rem 0;
+
+    background-color: white;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 4rem 0 0 ;
+}
+.content{
+    height: 80%;
+}
+
+/* ---------------------------mytable--------------------------- */
+.mytable_content{
+    height: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+}
+.mytable_title{
+    position: relative;
+    top: 1.5rem; left: 2rem;
+
+    width: fit-content;
+    font-size: 2.5rem;
+    font-weight: 600;
+
+    background-color: white;
+}
+.mytable{
+    border: 2px dotted black;
+    height: 78%;
+    width: 100%;
+    
+    padding: 2rem;
+
+    overflow-y: scroll;
+
+    display: grid;
+    grid-template-columns: 0.5fr repeat(7, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    gap: 0.5rem;
+}
+
+.reupload{
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    top: -3rem;
+
+    width: 90%;
+    height: 5rem;
+    
+    background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 100%);
+}
+.reupload_btn{
+    padding: 0.5rem 1.5rem;
+    background-color: #BDC5FF;
+
+    color: white;
+    font-weight: 600;
+
+    width: fit-content;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 1rem;
+
+    cursor: pointer;
+}
+
+/* ---------------------------mytable_js--------------------------- */
+
+.table_block{
+    width: 6rem;
+    height: 3rem;
+
+    border-radius: 1rem;
+    border: 1px solid #BBBBBB;
+
+    margin-top: 0.5rem;
+    
+}
+.table_day{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.table_time{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

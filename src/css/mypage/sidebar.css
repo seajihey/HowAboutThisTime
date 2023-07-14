@@ -1,5 +1,5 @@
 .side_bar{
-    height: calc(100vh - 8rem);
+    height: 100%;
     
     white-space: nowrap;
     padding: 1rem 3rem;
@@ -15,11 +15,13 @@
 .side_items{
     font-size: 1rem;
     font-weight: 500;
+
 }
 .item{
     padding: 0.5rem;
+    cursor: pointer;
 }
-.item_active{
+.side_item_active{
     color: #164DCA;
     font-weight: 900;
     font-size: 1.2rem;
