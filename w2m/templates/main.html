@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>이때?어때!</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Main Page</h1>
-</body>
+    <form action="/login/" method="GET">
+      <input type="text" name="id" required />
+      <input type="text" name="pw" required />
+      <input type="submit" value="로그인" />
+    </form>
+  </body>
 </html>

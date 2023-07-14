@@ -1,4 +1,4 @@
-import os, cv2
+import os, cv2, random
 
 from rest_framework import status
 from rest_framework.response import Response
@@ -30,43 +30,30 @@ class UserList(ListCreateAPIView):
     def get(self, request, *args, **kwargs):
         if request.data:
             mode = request.data["mode"]
-            if mode == "find_id":
+            if mode == "find_id":  # 이메일과 이름으로 아이디 찾기
                 try:
                     user_instance = User.objects.get(email=request.data["email"])
                     if user_instance.name == request.data["name"]:
-                        return JsonResponse(
-                            {
-                                "id": user_instance.id,
-                            }
-                        )
+                        return JsonResponse({"id": user_instance.id})
                     else:
-                        return JsonResponse(
-                            {
-                                "status": "404 Not Found",
-                            }
-                        )
+                        return JsonResponse({"status": "404 Not Found"})
                 except:
-                    return JsonResponse(
-                        {
-                            "status": "404 Not Found",
-                        }
-                    )
-            elif mode == "reset_pw":
-                pass
-                # try:
-                #     user_instance = User.objects.get(email=request.data["email"])
-                #     if user_instance.name == request.data["name"]:
-                #         return JsonResponse({
-                #             "id": user_instance.id,
-                #         })
-                #     else:
-                #         return JsonResponse({
-                #             "status": "404 Not Found",
-                #         })
-                # except:
-                #     return JsonResponse({
-                #             "status": "404 Not Found",
-                #         })
+                    return JsonResponse({"status": "404 Not Found"})
+            elif mode == "reset_pw":  # 아이디와 이름과 이메일로 비번 초기화
+                try:
+                    user_instance = User.objects.get(email=request.data["id"])
+
+                    if (
+                        user_instance.name == request.data["name"]
+                        and user_instance.email == request.data["email"]
+                    ):
+                        user_instance.pw = str(random.randint(0, 99999999)).zfill(8)
+                        user_instance.save()
+                        return JsonResponse({"pw": user_instance.pw})
+                    else:
+                        return JsonResponse({"status": "404 Not Found"})
+                except:
+                    return JsonResponse({"status": "404 Not Found"})
 
         else:
             return self.list(request, *args, **kwargs)
@@ -120,6 +107,7 @@ class UserDelete(DestroyAPIView):
     serializer_class = UserSerializer
 
 
+# User Exit from a group
 class UserExit(UpdateAPIView):
     def patch(self, request, *args, **kwargs):
         group_code = request.data["group_code"]
