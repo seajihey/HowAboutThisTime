@@ -1,0 +1,30 @@
+.side_bar{
+    height: 100%;
+    
+    white-space: nowrap;
+    padding: 1rem 3rem;
+
+}
+.title{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #164DCA;
+
+    margin-bottom: 2rem;
+}
+.side_items{
+    font-size: 1rem;
+    font-weight: 500;
+
+}
+.item{
+    padding: 0.5rem;
+    cursor: pointer;
+}
+.side_item_active{
+    color: #164DCA;
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-decoration: underline black 0.8px;
+    text-underline-offset: 3px;
+}
