@@ -24,6 +24,11 @@ def main(request):
 def register(request):
     return render(request, "register.html")
 
+def mypage(request):
+    return render(request, "mypage.html")
+
+def mygroup(request):
+    return render(request, 'mygroup.html')
 
 """ RESTful API (CRUD) for User """
 
