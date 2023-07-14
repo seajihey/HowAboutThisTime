@@ -28,11 +28,12 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", views.main, name="main"),
-    path("", include("w2m.urls")),
     path("register/", views.register, name="register"),
     path("mypage/", views.mypage, name="mypage"),
     path("mygroup/", views.mygroup, name="mygroup"),
+    path("", views.main, name="main"),
+    path("", include("w2m.urls")),
+
 
     re_path(
         r"^swagger(?P<format>\.json|\.yam|)$",
