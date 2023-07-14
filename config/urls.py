@@ -30,6 +30,12 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.main, name="main"),
     path("", include("w2m.urls")),
+    path("register/", views.register, name="register"),
+
+
+
+
+
     re_path(
         r"^swagger(?P<format>\.json|\.yam|)$",
         schema_view.without_ui(cache_timeout=0),

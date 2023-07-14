@@ -21,6 +21,9 @@ BASE_PATH = BASE_PATH[: BASE_PATH.find("w2m") - 1]
 def main(request):
     return render(request, "main.html")
 
+def register(request):
+    return render(request, "register.html")
+
 
 """ RESTful API (CRUD) for User """
 
