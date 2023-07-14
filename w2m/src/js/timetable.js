@@ -9,7 +9,7 @@ function createRoomPartItem(num){
     user.classList.add("user");
 
     const image = new Image();
-    image.src="../img/user.png";
+    image.src="../src/img/user.png";
 
     const name = document.createElement("div");
     name.classList.add("name");
