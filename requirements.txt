@@ -1,0 +1,6 @@
+opencv-python
+numpy
+django
+djangorestframework
+drf_yasg
+pillow
