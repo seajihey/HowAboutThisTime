@@ -24,10 +24,38 @@ def main(request):
 def register(request):
     return render(request, "register.html")
 
+def mypage(request):
+    return render(request, "mypage.html")
+
+def mygroup(request):
+    return render(request, 'mygroup.html')
 
 """ RESTful API (CRUD) for User """
 
 
+
+
+class UserLogin(RetrieveAPIView):
+    def get(self,request,*args,**kwargs):
+        user_id = request.data.get('id')
+        user_pw = request.data.pw('pw')
+        user_instance= User.objects.get(id=user_id)
+        if user_instance.pw == user_pw:
+            return JsonResponse({
+                'success':True,
+                'id':user_id,
+                'pw':user_pw,
+            })
+        else:
+            return JsonResponse({
+                'success':False,
+            })
+
+ 
+ 
+ 
+ 
+            
 # CREATE User
 class UserList(ListCreateAPIView):
     def get(self, request, *args, **kwargs):

@@ -28,12 +28,11 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("register/", views.register, name="register"),
+    path("mypage/", views.mypage, name="mypage"),
+    path("mygroup/", views.mygroup, name="mygroup"),
     path("", views.main, name="main"),
     path("", include("w2m.urls")),
-    path("register/", views.register, name="register"),
-
-
-
 
 
     re_path(
