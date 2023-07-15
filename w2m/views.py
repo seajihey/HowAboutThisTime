@@ -89,6 +89,37 @@ class UserList(ListCreateAPIView):
         else:
             return self.list(request, *args, **kwargs)
 
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+
+        unavailable_datetimes = {
+            "mon": dict(),
+            "tue": dict(),
+            "wed": dict(),
+            "thu": dict(),
+            "fri": dict(),
+            "sat": dict(),
+            "sun": dict(),
+        }
+
+        user_instance = User.objects.get(id=request.data["id"])
+        if user_instance.img_path:
+            unavailable_datetimes = TableDetector.getUnavailableDatetime(
+                user_instance.img_path, unavailable_datetimes, user_instance.id
+            )
+        
+        user_instance.my_unavailable_datetimes = unavailable_datetimes
+        user_instance.save("add_my_time_table")
+
+        response = dict()
+        response["id"] = user_instance.id
+        response["name"] = user_instance.name
+        response["my_unavailable_datetimes"] = user_instance.my_unavailable_datetimes
+        return JsonResponse(response)
+
+    
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
