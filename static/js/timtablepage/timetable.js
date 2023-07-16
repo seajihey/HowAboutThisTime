@@ -176,10 +176,4 @@ function getdata() {
 }
 
 
-const tableElement = document.querySelector('.table');
-tableElement.style.overflowX = 'hidden';
-tableElement.style.overflowY = 'auto';
-
-
-
 
