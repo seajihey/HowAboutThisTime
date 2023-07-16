@@ -29,30 +29,12 @@ for(let i = 0; i < 5; i++){
     room_part_items.appendChild(item);
 }
 
-//시간표
-getdata()
-    fetch('')
-    .then((response) =>{
-        return response.json();
-    }).then( json => {
-        console.log(json);
-        let a = json.name;
 
-        let timetable = {"mon" :{
-            "1" : ["tjsgh531"],
-            "2" : ["tjsgh531"]
-        }};
-
-        console.log(timetable["mon"]["1"].length);
-
-        console.log(a);
-    }); 
-
-// time
+// timetable
 getdata();
 
 function getdata() {
-  fetch('')
+  fetch('URL')
     .then((response) => {
       return response.json(); 
     })
@@ -62,19 +44,142 @@ function getdata() {
 
       let timetable = {
         "mon": {
-          "1": ["tjsgh531", "user1"] 
-        }
+          "1": ["user1", "user2", "user3"],
+          "2": ["user4"],
+          "3": [],
+          "4": [],
+          "5": [],
+          "6": [],
+          "7": [],
+          "8": [],
+          "9": [],
+          "10": [],
+          "11": [],
+          "12": [],
+          "13": [],
+        },
+        "tue": {
+          "1": ["user1", "user2", "user3"],
+          "2": ["user4"],
+          "3": [],
+          "4": [],
+          "5": [],
+          "6": [],
+          "7": [],
+          "8": [],
+          "9": [],
+          "10": [],
+          "11": [],
+          "12": [],
+          "13": [],
+        },
+        "wed": {
+          "1": ["user1", "user2", "user3"],
+          "2": ["user4"],
+          "3": [],
+          "4": [],
+          "5": [],
+          "6": [],
+          "7": [],
+          "8": [],
+          "9": [],
+          "10": [],
+          "11": [],
+          "12": [],
+          "13": [],
+        },
+        "thu": {
+          "1": ["user1", "user2", "user3"],
+          "2": ["user4"],
+          "3": [],
+          "4": [],
+          "5": [],
+          "6": [],
+          "7": [],
+          "8": [],
+          "9": [],
+          "10": [],
+          "11": [],
+          "12": [],
+          "13": [],
+        },
+        "fri": {
+          "1": ["user1", "user2", "user3"],
+          "2": ["user4"],
+          "3": [],
+          "4": [],
+          "5": [],
+          "6": [],
+          "7": [],
+          "8": [],
+          "9": [],
+          "10": [],
+          "11": [],
+          "12": [],
+          "13": [],
+        },
+        "sat": {
+          "1": ["user1", "user2", "user3"],
+          "2": ["user4"],
+          "3": [],
+          "4": [],
+          "5": [],
+          "6": [],
+          "7": [],
+          "8": [],
+          "9": [],
+          "10": [],
+          "11": [],
+          "12": [],
+          "13": [],
+        },
+        "sun": {
+          "1": ["user1", "user2", "user3"],
+          "2": ["user4"],
+          "3": [],
+          "4": [],
+          "5": [],
+          "6": [],
+          "7": [],
+          "8": [],
+          "9": [],
+          "10": [],
+          "11": [],
+          "12": [],
+          "13": [],
+        },
+        
       };
 
-      if (timetable["mon"]["1"].length >= 2) {
-        let mon1Elements = document.querySelectorAll('.mon_1');
-        mon1Elements.forEach(element => {
-          element.style.backgroundColor = '#164DCA';
-        });
+      for (let day in timetable) {
+        for (let time in timetable[day]) {
+          let count = timetable[day][time].length;
+          
+          if (count >= 3) {
+            elements.forEach(element => {
+              element.style.backgroundColor = '#164DCA';
+            });
+          } else if (count >= 2) {
+            elements.forEach(element => {
+              element.style.backgroundColor = '#BDC5FF';
+            });
+          } else if (count >= 1) {
+            elements.forEach(element => {
+              element.style.backgroundColor = '#F0EDFF';
+            });
+          }
+        }
       }
 
       console.log(a); 
     });
 }
+
+
+const tableElement = document.querySelector('.table');
+tableElement.style.overflowX = 'hidden';
+tableElement.style.overflowY = 'auto';
+
+
 
 

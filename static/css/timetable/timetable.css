@@ -6,7 +6,10 @@
     position: absolute;
     top: 11rem;
     left: 30rem;
-    z-index: -2;
+    z-index: -1;
+    display: flex;
+   
+   
 }
 /* 월요일 */
 .mon_1 {
@@ -92,6 +95,7 @@
     border: 0.5px solid black;
     border-radius: 15px;
 }
+
 
 /* 화요일 */
 .tue_1 {
