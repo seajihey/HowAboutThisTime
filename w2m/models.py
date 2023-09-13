@@ -11,6 +11,7 @@ def random_code():
 
 
 # Create your models here.
+'''
 class User(models.Model):
     id = models.CharField(max_length=50, primary_key=True)
     pw = models.CharField(max_length=255)
@@ -51,7 +52,7 @@ class User(models.Model):
                 return
         super().save(*args, **kwargs)
 
-
+'''
 class Group(models.Model):
     group_name = models.CharField(max_length=50, default="New Group")
     group_code = models.CharField(max_length=8, primary_key=True, default=random_code)
