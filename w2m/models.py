@@ -33,7 +33,7 @@ class User(models.Model):
                 return
             elif mode == "exit_group":
                 super().save((), **kwargs)
-                return
+                returnP
             elif mode == "add_my_time_table":
                 super().save((), **kwargs)
                 return
